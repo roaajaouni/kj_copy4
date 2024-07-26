@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <form method="post">
+        {% csrf_token %}
+         <h1>note for {{child.name}}</h1>
+        <br>
+        <label >Name:</label>
+        <br>
+        {{ form.name }}
+        <br>
+        <label >Add Notes for {{child.name}}:</label>
+        <br>
+        {{ form.notes }}
+        <br>
+        <button type="submit">Confirm</button>
+    </form>
+</body>
+</html>

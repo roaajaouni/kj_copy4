@@ -1,0 +1,77 @@
+{% block content %}
+
+
+{% if page == 'register' %}
+
+<h2> Register as a Mother</h2>
+</form>
+   <div class="auth">
+      <div class="card">
+        <div class="auth__header text-center">
+
+          <h3>Account SignUp</h3>
+          <p>Create a new account</p>
+        </div>
+
+        <form action="{% url 'register' %}" method="POST" class="form auth__form">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="auth__actions">
+            <input class="btn btn--sub btn--lg" type="submit" value="Sign In" />
+          </div>
+        </form>
+        <div class="auth__alternative">
+          <p>Already have an Account?</p>
+          <a href="{% url 'login' %}">Log In</a>
+        </div>
+      </div>
+    </div>
+{% else %}
+<h2> Login as a Mother</h2>
+</form>
+    <div class="auth">
+      <div class="card">
+        <div class="auth__header text-center">
+          <h3>Account Login</h3>
+          <p>Hello, Welcome Back!</p>
+        </div>
+
+        <form action="{% url 'login' %}" method="POST" class="form auth__form">
+            {% csrf_token %}
+          <!-- Input:Email -->
+          <div class="form__field">
+            <label for="formInput#text">Username: </label>
+            <input
+              class="input input--text"
+              id="formInput#text"
+              type="text"
+              name="username"
+              placeholder="Enter your username..."
+            />
+          </div>
+
+          <!-- Input:Password -->
+          <div class="form__field">
+            <label for="formInput#password">Password: </label>
+            <input
+              class="input input--password"
+              id="formInput#passowrd"
+              type="password"
+              name="password"
+              placeholder="••••••••"
+            />
+          </div>
+          <div class="auth__actions">
+            <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
+
+          </div>
+        </form>
+        <div class="auth__alternative">
+          <p>Don’t have an Account?</p>
+          <a href="{% url 'register' %}">Sign Up</a>
+        </div>
+      </div>
+    </div>
+{% endif %}
+
+{% endblock %}

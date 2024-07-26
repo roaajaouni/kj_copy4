@@ -1,0 +1,22 @@
+
+
+<body>
+{% block content %}
+    <meta charset="UTF-8">
+        <title>This is Mother page</title>
+             <h1>{{mother.name}}'s info</h1>
+                 <li>{{mother.email}}</li>
+                <li>{{mother.phone}}</li>
+                <li>{{mother.address}}</li>
+                 <h2>Here are {{mother.name}} children </h2>
+    {% for c in mother.child_set.all %}
+    <a href="{% url 'profile' c.id %}">{{c.name}}</a>
+    <br>
+    {% endfor %}
+    <a href="{% url 'createchild' mother.id %}">Add Child</a>
+    <br>
+    <a href="{% url 'logout' %}">LogOut</a>
+
+</body>
+{% include 'footer.html' %}
+{% endblock %}

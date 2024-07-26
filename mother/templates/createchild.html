@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>child profile</title>
+</head>
+<body>
+	<form method = "post" enctype="multipart/form-data">
+		{% csrf_token %}
+        <br>
+        <label >Name:</label>
+        {{ form.name }}
+        <br>
+		<br>
+        <label >Age:</label>
+        {{ form.age }}
+        <br>
+		<br>
+        <label >Child gender:</label>
+        {{ form.child_gender }}
+        <br>
+		<br>
+        <label > Featured Image:</label>
+        {{ form.featured_image }}
+        <br>
+		<br>
+		<label >  State Health:</label>
+        {{ form.state_health}}
+        <br>
+		<br>
+		<button type="submit">Upload</button>
+	</form>
+</body>
+</html>
