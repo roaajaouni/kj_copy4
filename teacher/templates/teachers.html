@@ -1,0 +1,23 @@
+
+
+{% block content %}
+
+<h2> Welcom {{teacher.name}}</h2>
+{% csrf_token %}
+{% include 'navbart.html' %}
+ 
+{% for child in children %}
+<table>
+    <tr>
+    <li> <a href="{% url 'childprofile' child.id %}"> {{child.name}}</a></li>
+    </tr>
+     
+    {% include 'footer_t.html' %}
+</table>
+
+{% endfor %}
+
+<li><a href = "{% url 'logoutuser' %}">Logout</a></li>
+
+
+{% endblock %}

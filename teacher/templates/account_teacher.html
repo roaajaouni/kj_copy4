@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ forms.as_p }}
+        <button type="submit">Confirm</button>
+    </form>
+</body>
+{% include 'footer_t.html' %}
+</html>

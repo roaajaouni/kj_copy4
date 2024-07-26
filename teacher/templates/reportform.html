@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>child profile</title>
+</head>
+<body>
+	<form method = "post" enctype="multipart/form-data">
+		{% csrf_token %}
+<!--		{{form.teacher}}-->
+		<br>
+		<br>
+        <label >Learn:</label>
+        {{ form.learn }}
+        <br>
+		<br>
+        <label >Activities:</label>
+        {{ form.activities }}
+        <br>
+		<br>
+		<label >Attiude:</label>
+        {{ form.attiude }}
+        <br>
+		<br>
+        <label >Mood:</label>
+        {{ form.mood }}
+		<br>
+		<br>
+		<label >Created:</label>
+        {{ form.created }}
+		<br>
+		<br>
+
+
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>

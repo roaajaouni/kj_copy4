@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>child location</title>
+</head>
+<body>
+  <form method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+<!--    {{form.teacher}}-->
+    <br>
+    <br>
+        <label >name:</label>
+        {{ child.name }}
+    <br>
+        <label >location:</label>
+        {{ form.location }} 
+
+    <br>
+    <br>
+    <label >created:</label>
+        {{ form.created }} 
+    <br>
+    <br>
+    <label >Important_notice:</label>
+        {{ form.Important_notice}} 
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

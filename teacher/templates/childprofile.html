@@ -1,0 +1,28 @@
+
+{% block content %}
+<h2>{{child.name}} Profile</h2>
+    <li>Child name: {{child.name}}</li>
+    <li>Child mom: {{child.mom}}</li>
+    <li>Child Age: {{child.age}}</li>
+<li>Child Gender: {{child.child_gender}}</li>
+<li>Child meal: {{child.meal}}</li>
+<li>State Health: {{child.state_health}}</li>
+
+    <img class="project__thumbnail" src="{{child.featured_image.url}}" alt="project thumbnail" />
+<br>
+
+{{child.meal}}
+<br>
+<a href="{% url 'bus' child.id %}">child_location {{child.name}}</a>
+<br>
+<a href="{% url 'createreport' child.id %}">Create Report for {{child.name}}</a>
+<br>
+<a href="{% url 'readnotes' child.id %}">Read {{child.name}}'s Notes </a>
+<br>
+<a href="{% url 'readreport' child.id %}">Read {{child.name}}'s Report</a>
+<br>
+
+<a href="{% url 'logout' %}">LogOut</a>
+{% include 'footer_t.html' %}
+{% endblock %}
+

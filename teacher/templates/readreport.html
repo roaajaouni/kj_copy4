@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>read report</title>
+</head>
+<body>
+{% block content %}
+
+<br>
+{{child.name}}
+<br>
+{% for r in report %}
+<table>
+    <tr>
+        <label >Learn:</label>
+        {{ r.learn }}
+        <br>
+		<br>
+        <label >Activities:</label>
+        {{ r.activities }}
+        <br>
+		<br>
+		<label >Attiude:</label>
+        {{ r.attiude }}
+        <br>
+		<br>
+        <label >Mood:</label>
+        {{ r.mood }}
+		<br>
+		<br>
+        <label >Created:</label>
+        {{ r.created }}
+		<br>
+		<br>
+
+    </tr>
+
+</table>
+
+<br>
+{% endfor %}
+{% endblock %}
+
+</body>
+</html>
